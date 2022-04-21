@@ -210,7 +210,6 @@ delRecipe.addEventListener("click", () => {
     delModal.close();
     delModal.style.opacity = "0";
     let activeContent = document.querySelector(".active").id;
-
     document.querySelector(`[data-id="${activeContent}"]`).remove();
 
     const index = data
@@ -221,13 +220,17 @@ delRecipe.addEventListener("click", () => {
     data.splice(index, 1);
 
     //  ############ REMOVE DOM ELEMENT ############
+    console.log(document.querySelector(".active"));
     document.querySelector(".active").remove();
+
     window.localStorage.setItem("data", JSON.stringify(data));
 
-    // reset data index counter
+    // // reset data index counter
     i--;
-    // set another recipe
-    switchBackward();
+    // // set another recipe
+    setTimeout(() => {
+      switchBackward();
+    }, 300);
   });
 });
 

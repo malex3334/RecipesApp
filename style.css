@@ -21,6 +21,7 @@ h2 {
 
 h3 {
   font-size: 2.5rem;
+  padding: 0.2em;
   font-weight: bold;
   background-color: yellowgreen;
   border-radius: 10px;
@@ -115,6 +116,11 @@ nav {
   outline: none;
 }
 
+.modal input:active,
+.modal input:focus {
+  box-shadow: none;
+}
+
 /* ############## RATING ############# */
 rating {
   display: flex;
@@ -155,6 +161,7 @@ rating input[type="radio"]:focus ~ input[type="radio"]:invalid::after {
 /* if a value is selected, make them all selected */
 rating input[type="radio"]:valid {
   color: orange;
+  box-shadow: none;
 }
 /* then make the ones coming after the selected value look inactive */
 rating input[type="radio"]:checked ~ input[type="radio"]:not(:checked)::after {
