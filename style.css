@@ -87,12 +87,13 @@ nav {
   align-items: center;
   border-radius: 15px;
   /* border: 1px solid black; */
-  padding: 2.5em;
+  padding: 1em 2.5rem 2.5rem 2.5rem;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.432);
 }
 
-input,
-textarea {
+.modal input,
+.modal textarea,
+.modal select {
   font-family: "Poppins", sans-serif;
   width: 75%;
   border-radius: 5px;
@@ -100,12 +101,15 @@ textarea {
   /* border: 1px grey solid; */
   border: none;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24) inset;
+  color: grey;
 }
 
-input:active,
-input:focus,
-textarea:active,
-textarea:focus {
+.modal select:active,
+.modal select:focus,
+.modal input:active,
+.modal input:focus,
+.modal textarea:active,
+.modal textarea:focus {
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.54) inset;
   border: none;
   outline: none;
@@ -373,6 +377,7 @@ button[type="submit"] {
 
   .output {
     background-color: rgb(218, 218, 218, 0.9);
+    width: 40rem;
   }
 
   .modal {
