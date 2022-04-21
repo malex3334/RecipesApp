@@ -161,11 +161,12 @@ rating input[type="radio"]:checked ~ input[type="radio"]:not(:checked)::after {
 /* OUTPUTS */
 
 select {
+  border-radius: 12px;
   padding: 0 0.5em;
 }
 
 button {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   padding: 0.5em 1em;
   background-color: yellowgreen;
@@ -178,6 +179,10 @@ button {
 
 #del-recipe {
   background-color: red;
+}
+
+button[type="submit"] {
+  margin-top: 1.5rem;
 }
 
 .output li {
@@ -336,6 +341,11 @@ button {
     font-size: 55%;
   }
 
+  select {
+    height: 5rem;
+    width: 100%;
+  }
+
   .meal-name {
     font-size: 2rem;
     line-height: 1.5;
@@ -366,7 +376,6 @@ button {
   }
 
   .modal {
-    height: auto;
     overflow: auto;
   }
 
@@ -378,10 +387,5 @@ button {
 @media (max-width: 400px) {
   html {
     font-size: 50%;
-  }
-
-  select {
-    height: 5rem;
-    width: 100%;
   }
 }
