@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Recipes app</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="script.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <button id="new-recipe">Nowy przepis</button>
+        <button id="del-recipe">Usuń przepis</button>
+        <button id="reset">Reset</button>
+        <dialog id="del-modal" class="modal confirm">
+          <h4>Na pewno usunąć?</h4>
+          <div class="answer-buttons">
+            <button id="btn-yes">Tak</button>
+            <button id="btn-no">Nie</button>
+          </div>
+        </dialog>
+        <select name="select" id="select"></select>
+        <dialog id="modal" class="modal">
+          <div class="input-form">
+            <span class="close">x</span>
+            <h2>Wprowadź przepis:</h2>
+            <span class="empty-name">Pole nie może być puste</span>
+            <input id="name" type="text" placeholder="nazwa" required />
+            <br />
+            <input id="type" type="text" placeholder="typ" /> <br />
+            <input id="ingredients" type="text" placeholder="składniki" />
+            <br />
+            <textarea
+              name="description"
+              id="description"
+              placeholder="opis"
+              cols="30"
+              rows="10"
+            ></textarea>
+            <br />
+            <input id="photo" type="text" placeholder="url zdjęcia" /> <br />
+            <input
+              id="preparation-time"
+              type="text"
+              placeholder="czas przygotowania (minut)"
+            />
+            <br />
+            <div class="rating">
+              <rating>
+                <input
+                  class="rating-option"
+                  type="radio"
+                  name="rating"
+                  value="1"
+                  aria-label="1 star"
+                  required
+                /><input
+                  class="rating-option"
+                  type="radio"
+                  name="rating"
+                  id="star-2"
+                  value="2"
+                  aria-label="2 stars"
+                /><input
+                  class="rating-option"
+                  type="radio"
+                  name="rating"
+                  value="3"
+                  aria-label="3 stars"
+                /><input
+                  class="rating-option"
+                  type="radio"
+                  name="rating"
+                  value="4"
+                  aria-label="4 stars"
+                /><input
+                  class="rating-option"
+                  type="radio"
+                  name="rating"
+                  value="5"
+                  aria-label="5 stars"
+                />
+              </rating>
+            </div>
+
+            <button type="submit" id="submit">Dodaj</button>
+          </div>
+        </dialog>
+      </nav>
+
+      <div class="output-body">
+        <div class="output">
+          <div class="btn">
+            <div id="right" class="btn right" tabindex="0">
+              <ion-icon name="caret-forward-outline"></ion-icon>
+            </div>
+            <div id="left" class="btn left" tabindex="0">
+              <ion-icon name="caret-back-outline"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

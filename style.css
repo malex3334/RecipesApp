@@ -1,0 +1,374 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-repeat: no-repeat;
+}
+
+h2 {
+  margin: 2rem 0;
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background-color: yellowgreen;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+nav {
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+/* MODAL & INPUTS */
+.modal::backdrop {
+  background-color: rgb(80, 80, 80, 0.6);
+}
+
+.modal {
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 3px solid lawngreen;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.342);
+}
+
+.modal.confirm {
+  width: 30rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.modal.confirm h4 {
+  text-align: center;
+  font-size: 1.8rem;
+  /* margin: 2rem auto; */
+}
+
+.answer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+#btn-yes {
+  background-color: red;
+}
+
+.input-form {
+  width: 50rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  /* border: 1px solid black; */
+  padding: 2.5em;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.432);
+}
+
+input,
+textarea {
+  font-family: "Poppins", sans-serif;
+  width: 75%;
+  border-radius: 5px;
+  padding: 0.5em;
+  /* border: 1px grey solid; */
+  border: none;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.24) inset;
+}
+
+input:active,
+input:focus,
+textarea:active,
+textarea:focus {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.54) inset;
+  border: none;
+  outline: none;
+}
+
+/* ############## RATING ############# */
+rating {
+  display: flex;
+}
+
+/* make the current radio visually hidden */
+input[type="radio"] {
+  -webkit-appearance: none;
+  margin: 0;
+  box-shadow: none; /* remove shadow on invalid submit */
+}
+
+/* generated content is now supported on input. supporting older browsers? change button above to {position: absolute; opacity: 0;} and add a label, then style that, and change all selectors to reflect that change */
+input[type="radio"]::after {
+  content: "\2605";
+  font-size: 32px;
+  cursor: pointer;
+}
+
+/* by default, if no value is selected, all stars are grey */
+input[type="radio"]:invalid::after {
+  color: #a7a7a7;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.162));
+}
+
+/* if the rating has focus or is hovered, make all stars darker */
+rating:hover input[type="radio"]:invalid::after,
+rating:focus-within input[type="radio"]:invalid::after {
+  color: orange;
+}
+
+/* make all the stars after the focused one back to ligh grey, until a value is selected */
+rating:hover input[type="radio"]:hover ~ input[type="radio"]:invalid::after,
+rating input[type="radio"]:focus ~ input[type="radio"]:invalid::after {
+  color: #ddd;
+}
+
+/* if a value is selected, make them all selected */
+rating input[type="radio"]:valid {
+  color: orange;
+}
+/* then make the ones coming after the selected value look inactive */
+rating input[type="radio"]:checked ~ input[type="radio"]:not(:checked)::after {
+  color: #a7a7a7;
+  content: "\2606"; /* optional. hollow star */
+}
+
+/* OUTPUTS */
+
+select {
+  padding: 0 0.5em;
+}
+
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  background-color: yellowgreen;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.75);
+  color: white;
+  cursor: pointer;
+}
+
+#del-recipe {
+  background-color: red;
+}
+
+.output li {
+  list-style: none;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+#meal-type {
+  text-align: center;
+}
+
+#rating {
+  text-align: right;
+}
+
+.bold {
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.meal-img {
+  overflow: hidden;
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.33));
+  align-self: center;
+  margin: 0 0 5rem 0;
+  /* width: 40rem; */
+  /* margin: 0 auto; */
+}
+
+.meals-container img {
+  /* width: 20rem; */
+  border-radius: 15px;
+  max-width: 60rem;
+  max-height: 40rem;
+}
+
+.description-list {
+  width: 100%;
+}
+
+.meal-name {
+  font-size: 3rem;
+  align-self: center;
+  margin-bottom: 1rem;
+}
+
+.empty-name {
+  color: red;
+  font-weight: bold;
+  opacity: 0;
+}
+
+.close {
+  font-size: 2.5rem;
+  margin: 0;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.btn {
+  cursor: pointer;
+  font-size: 8rem;
+
+  color: yellowgreen;
+  user-select: none;
+  transition: color 0.1s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  color: greenyellow;
+  outline: none;
+}
+
+.btn .right {
+  position: absolute;
+  top: 50%;
+  right: -8rem;
+  filter: drop-shadow(2px 1px 3px rgba(0, 0, 0, 0.452));
+}
+
+.btn .left {
+  position: absolute;
+  top: 50%;
+  left: -8rem;
+
+  filter: drop-shadow(2px 1px 3px rgba(0, 0, 0, 0.452));
+}
+
+.output {
+  margin: 0 auto 5rem auto;
+  padding: 5rem 5rem 2rem 5rem;
+  width: 80rem;
+  min-height: 80rem;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1;
+
+  background-color: rgb(218, 218, 218, 0.7);
+  background: linear-gradient(
+    rgba(128, 128, 128, 0.568) to left,
+    rgb(218, 218, 218, 0.7),
+    rgba(128, 128, 128, 0.747)
+  );
+  backdrop-filter: blur(10px);
+  border: 5px solid rgb(173, 255, 47, 0.7);
+  border-radius: 15px;
+  box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.452);
+
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.meals-container {
+  width: 100%;
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.active {
+  display: flex;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 55%;
+  }
+
+  .output {
+    width: 60rem;
+  }
+
+  .meals-container img {
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 55%;
+  }
+
+  .meal-name {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  nav {
+    width: 30rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .output {
+    width: 40rem;
+  }
+  .input-form {
+    width: 40rem;
+  }
+  button {
+    font-size: 2rem;
+    width: 60%;
+  }
+  .meals-container img {
+    max-width: 35rem;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+
+  select {
+    height: 5rem;
+    width: 100%;
+  }
+}
