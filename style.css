@@ -360,6 +360,19 @@ button {
   .meals-container img {
     max-width: 35rem;
   }
+
+  .output {
+    background-color: rgb(218, 218, 218, 0.9);
+  }
+
+  .modal {
+    height: auto;
+    overflow: auto;
+  }
+
+  .input-form {
+    height: auto;
+  }
 }
 
 @media (max-width: 400px) {
