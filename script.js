@@ -220,7 +220,6 @@ delRecipe.addEventListener("click", () => {
     data.splice(index, 1);
 
     //  ############ REMOVE DOM ELEMENT ############
-    console.log(document.querySelector(".active"));
     document.querySelector(".active").remove();
 
     window.localStorage.setItem("data", JSON.stringify(data));
@@ -265,3 +264,18 @@ data.forEach(() => {
   printMeals();
   switchForward();
 });
+
+// function download(content, fileName, contentType) {
+//   const a = document.createElement("a");
+//   const file = new Blob([content], { type: contentType });
+//   a.href = URL.createObjectURL(file);
+//   a.download = fileName;
+//   a.click();
+// }
+
+// function onDownload() {
+//   download(JSON.stringify(data), "json-file-name.json", "text/plain");
+// }
+
+// const downloadData = document.querySelector("#download-data");
+// downloadData.addEventListener("click", onDownload);

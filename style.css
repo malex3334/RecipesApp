@@ -396,8 +396,16 @@ button[type="submit"] {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   html {
     font-size: 50%;
+  }
+
+  .btn .right {
+    right: -5rem;
+  }
+
+  .btn .left {
+    left: -5rem;
   }
 }
