@@ -189,11 +189,6 @@ select.addEventListener("change", () => {
   document.getElementById(result[0].name).classList.add("active");
 });
 
-// data.forEach((obj) => {
-//   if (obj.preparation > 25) console.log(obj.name, obj.type);
-//   if (obj.type == "kolacja") console.log(obj.name);
-// });
-
 //  ############ DELETE RECIPE ############
 // get active element id and check index of data array
 delRecipe.addEventListener("click", () => {

@@ -323,6 +323,10 @@ button[type="submit"] {
   animation: fadeIn 0.5s ease-in-out;
 }
 
+.hidden {
+  display: none;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

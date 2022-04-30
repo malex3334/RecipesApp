@@ -23,7 +23,7 @@ class Meal {
 let salatkaCezar = new Meal(
   0,
   "Sałatka cezar z kurczakiem i makaronem",
-  "kolacja",
+  "Obiad",
   [
     " pomidory koktajlowe",
     " mięso z piersi kurczaka",
@@ -45,7 +45,7 @@ let salatkaCezar = new Meal(
 let kremGroszkowy = new Meal(
   1,
   "Krem z zielonego groszku i szpinaku",
-  "kolacja",
+  "Kolacja",
   [
     " Bulion warzywny (domowy)",
     " Groszek zielony",
